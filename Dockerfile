@@ -235,7 +235,7 @@ VOLUME /var/lib/pve-cluster
 
 STOPSIGNAL SIGRTMIN+3
 HEALTHCHECK --interval=60s --timeout=10s --start-period=60s --retries=3 \
-    CMD ["curl", "-kLfSs", "http://localhost:8006"]
+    CMD ["curl", "-kLfSs", "-o", "/dev/null", "http://localhost:8006"]
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["/sbin/init", "--log-target=console", "--log-level=notice"]
